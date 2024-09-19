@@ -1,0 +1,7 @@
+GET http://localhost:33051/odata/v4/attachments/FilesSrv
+
+####
+GET http://localhost:40635/odata/v4/attachments/FilesSrv
+
+### POST To create
+GET http://localhost:33051/odata/v4/attachments/employeeSrv

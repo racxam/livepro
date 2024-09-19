@@ -1,0 +1,81 @@
+
+   <mvc:View
+	controllerName="com.sumit.mediauploader.controller.mediaui"
+	xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true"
+	xmlns="sap.m"
+	xmlns:upload="sap.m.upload"
+>
+	<App id="mediaId">
+		<pages>
+			<Page
+				id="page"
+				title="{i18n>title}"
+			>
+				<upload:UploadSet
+					id="uploadSet"
+					instantUpload="false"
+					uploadEnabled="true"
+					afterItemAdded="onAfterItemAdded"
+					uploadCompleted="onUploadCompleted"		
+					uploadUrl="/attachments/FilesSrv"				
+					items="{
+								path: '/FilesSrv',
+								parameters: {
+									$orderby: 'createdAt desc'
+								},
+								templateShareable: false
+                                }"
+				>
+					<upload:toolbar>
+					<OverflowToolbar>
+					<ToolbarSpacer/>
+					<Button
+							id="uploadSelectedButton"
+							text="Upload selected"
+							press="onUploadSelectedButton"/>
+					<Button
+							id="downloadSelectedButton"
+							text="Download selected"
+							press="onDownloadSelectedButton"/>
+					<Button
+							id="versionButton"
+							enabled="false"
+							text="Upload a new version"
+							press="onVersionUpload"/>
+					<upload:UploadSetToolbarPlaceholder />
+				</OverflowToolbar>
+					</upload:toolbar>
+					<upload:items>
+						<upload:UploadSetItem
+							fileName="{fileName}"
+							mediaType="{mediaType}"
+							url="{url}"
+							enabledEdit="false"
+							visibleEdit="false"
+							openPressed="onOpenPressed"
+						>
+							<upload:attributes>
+								<ObjectAttribute
+									title="Uploaded By"
+									text="{createdBy}"
+									active="false"
+								/>
+								<ObjectAttribute
+									title="Uploaded on"
+									text="{createdAt}"
+									active="false"
+								/>
+								<ObjectAttribute
+									title="File Size"
+									text="{size}"
+									active="false"
+								/>
+							</upload:attributes>
+						</upload:UploadSetItem>
+					</upload:items>
+				</upload:UploadSet>
+			</Page>			
+		</pages>
+	</App>
+</mvc:View>
