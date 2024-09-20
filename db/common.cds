@@ -49,7 +49,7 @@ type SectorT                   : String(3) enum {
     TruckBusDivision          = 'MTBD'; // Mahindra Truck & Bus Division
     TwoWheeler                = 'MTWL'; // Mahindra Two Wheeler Ltd
     Powerol                   = 'POWEROL'; // Mahindra Powerol
-    SwarajDivision            = 'SD'; // Swaraj Division
+    SwarajDivision            = 'SD'; // Swaraj i dont know
     HeadOffice                = 'HO'; // Mahindra Head Office
     LastMileMobility          = 'MLMML'; // Mahindra Last Mile Mobility Ltd
 }

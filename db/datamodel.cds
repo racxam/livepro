@@ -19,14 +19,7 @@ entity Files : cuid, managed {
 
 };
 
-entity employee : cuid {
 
-    EMP_NAME  : String(128);
-    EMP_EMAIL : String(128);
-    LANGUAGE  : String(2);
-    SALARY    : Decimal(15, 2);
-
-};
 
 context transcation {
 
