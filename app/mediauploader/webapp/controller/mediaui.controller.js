@@ -74,7 +74,26 @@ function (Controller,MessageToast) {
             var oUploadSet = this.byId("uploadSet");
             oUploadSet.setHttpRequestMethod("PUT")
             oUploadSet.uploadItem(item);
-        }			
+        },
+
+        // download on select
+        onDownloadSelectedButton: function () {
+            console.log("on Download selected!!!");
+			var oUploadSet = this.byId("uploadSet");
+            console.log(oUploadSet);
+
+			oUploadSet.getItems().forEach(function (oItem) {
+				if (oItem.getListItem().getSelected()) {
+					oItem.download(true);
+				}
+			});
+		},
+        // version on select
+        onVersionUpload: function(oEvent) {
+			var oUploadSet = this.byId("uploadSet");
+			this.oItemToUpdate = oUploadSet.getSelectedItem()[0];
+			oUploadSet.openFileDialog(this.oItemToUpdate);
+		},
 
 
 

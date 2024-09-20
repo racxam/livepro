@@ -28,13 +28,10 @@
   },
   "cds": {
     "requires": {
-      "auth": "xsuaa",
       "db": {
         "kind": "hana"
       }
     },
-    "sql": {
-      "native_hana_associations": false
-    }
+    "auth":"xsuaa"
   }
 }

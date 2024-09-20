@@ -1,8 +1,14 @@
 #!/bin/bash
 
 echo -e "This script will delete the existing build and create a new one\n"
-rm -rf mta_archives
-echo -e "Deleted mta_archive\n"
+
+# Check if the mta_archives directory exists
+if [ -d "mta_archives" ]; then
+    rm -rf mta_archives
+    echo -e "Deleted mta_archives\n"
+fi
+
+# Build the MTA archive
 mbt build
 echo -e "Created new mta_archive\n"
 

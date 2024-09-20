@@ -1,4 +1,4 @@
-GET http://localhost:33051/odata/v4/attachments/FilesSrv
+GET http://localhost:4004/odata/v4/attachments/FilesSrv
 
 ####
 GET http://localhost:40635/odata/v4/attachments/FilesSrv
