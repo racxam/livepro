@@ -3,6 +3,7 @@ namespace common.db;
 using {cuid} from '@sap/cds/common';
 
 //master tables start
+@cds.autoexpose @readonly
 context master {
     //supplier req departmetns
     entity departments : cuid {

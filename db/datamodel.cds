@@ -4,6 +4,7 @@ using {
     cuid,
     managed
 } from '@sap/cds/common';
+
 using {common.db as common} from './common';
 
 entity Files : cuid, managed {
@@ -35,9 +36,7 @@ context transcation {
         IsRelatedPartyVendorCode             : Boolean                  @mandatory; //Mandatory, visible when "Supplier Type" = "Local GST & Non-GST"
         SupplierSpendType                    : common.SpendTypeT        @mandatory; // Mandatory, visible when "Supplier Type" = "Local GST & Non-GST"
         NatureOfActivity                     : common.NatureOfActivityT @mandatory;
-        Sector                               : array of {
-            SectorT                                                     @mandatory
-        }; //more than one value
+        Sector                               : array of common.SectorT @mandatory; //more than one value
         FunctionAndSubfunction               : array of String(100) not null; // we will modify this later on
         PANCardNo                            : common.PanCardT not null;
         PANCardAttachment                    : Binary not null; //attachment

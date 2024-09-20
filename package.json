@@ -28,9 +28,6 @@
   },
   "cds": {
     "requires": {
-      "db": {
-        "kind": "hana"
-      }
     },
     "auth":"xsuaa"
   }
